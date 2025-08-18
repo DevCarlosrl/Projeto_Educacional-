@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redação</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='p1' x1='50' y1='0' x2='50' y2='100' gradientUnits='userSpaceOnUse'><stop stop-color='%23A855F7'/><stop offset='1' stop-color='%236366F1'/></linearGradient><radialGradient id='p2' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(50 50) rotate(90) scale(25)'><stop stop-color='white'/><stop offset='1' stop-color='white' stop-opacity='0'/></radialGradient></defs><path d='M50 0C77.6 0 100 22.4 100 50S77.6 100 50 100 0 77.6 0 50 22.4 0 50 0Z' fill='url(%23p1)'/><path d='M62.5 25C62.5 34.4 54.4 42.5 45 42.5S27.5 34.4 27.5 25 35.6 7.5 45 7.5 62.5 15.6 62.5 25Z' fill='%233B82F6'/><path d='M75 50c0 13.8-11.2 25-25 25S25 63.8 25 50s11.2-25 25-25 25 11.2 25 25Z' fill='url(%23p2)' fill-opacity='0.5'/></svg>">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09;
+            background-image: linear-gradient(to right, #0c0a09, #240b36, #4c1d95);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .tab-active {
+            border-color: #A855F7;
+            color: #ffffff;
+            border-bottom-width: 3px;
+        }
+
+        .nav-active {
+            color: #A855F7;
+        }
+
+        #essay-text {
+            resize: vertical;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #A855F7;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-black bg-opacity-50 backdrop-blur-sm text-white sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="../public/index.html" class="flex items-center space-x-2">
+                    <svg class="h-8 w-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0Z" fill="url(#paint0_linear_101_2)"/>
+                        <path d="M62.5 25C62.5 34.3894 54.3894 42.5 45 42.5C35.6106 42.5 27.5 34.3894 27.5 25C27.5 15.6106 35.6106 7.5 45 7.5C54.3894 7.5 62.5 15.6106 62.5 25Z" fill="#3B82F6"/>
+                        <path d="M75 50C75 63.8071 63.8071 75 50 75C36.1929 75 25 63.8071 25 50C25 36.1929 36.1929 25 50 25C63.8071 25 75 36.1929 75 50Z" fill="url(#paint1_radial_101_2)" fill-opacity="0.5"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_101_2" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#A855F7"/>
+                        <stop offset="1" stop-color="#6366F1"/>
+                        </linearGradient>
+                        <radialGradient id="paint1_radial_101_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 50) rotate(90) scale(25)">
+                        <stop stop-color="white"/>
+                        <stop offset="1" stop-color="white" stop-opacity="0"/>
+                        </radialGradient>
+                        </defs>
+                    </svg>
+                    <span class="text-2xl font-bold">Lab.IA</span>
+                </a>
+
+                <!-- Navegação Principal (Desktop) -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="../public/index.html" class="hover:text-purple-400 transition-colors">Início</a>
+                    
+                    <button class="flex items-center hover:text-purple-400 transition-colors dropdown-toggle">
+                        <span>Conteudo</span>
+                        <svg class="ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    
+                    <a href="../pages/redacao.html" class="text-purple-400 font-semibold transition-colors">Redação</a>
+
+                    <a href="#" class="hover:text-purple-400 transition-colors">Contato</a>
+                </nav>
+
+                <div class="hidden lg:flex items-center space-x-5">
+
+                    <div id="search-container" class="relative flex items-center">
+                        <input id="search-input" type="text" placeholder="Pesquisar..." class="absolute right-full w-0 bg-gray-700 text-white rounded-full py-1 transition-all duration-300 opacity-0 focus:outline-none focus:ring-2 focus:ring-purple-500 mr-2">
+                        <button id="search-button" class="hover:text-purple-400 transition-colors z-10">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="w-px h-6 bg-gray-600"></div>
+                    <a href="../pages/login.html" class="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+                        Login
+                    </a>
+                </div>
+
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight">Corretor de Redação IA</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-300">Escreva a sua redação, escolha um tema e receba uma análise completa com nota, correções e sugestões de melhoria.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800 bg-opacity-40 p-8 rounded-2xl border border-gray-700 mb-8">
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input id="theme-input" class="w-full sm:w-1/2 bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Insira um tema ou gere um novo">
+                    <button id="generate-theme-button" class="w-full sm:w-1/4 bg-gray-600 hover:bg-gray-500 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center">
+                        <span class="button-text">Gerar Tema com IA</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                    <button id="analyze-button" class="w-full sm:w-1/4 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center">
+                        <span class="button-text">Analisar Redação</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+                <textarea id="essay-text" class="w-full h-96 bg-gray-900 bg-opacity-50 border border-gray-600 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Comece a escrever a sua redação aqui..."></textarea>
+            </div>
+
+            <div id="results-column" class="bg-gray-800 bg-opacity-40 p-8 rounded-2xl border border-gray-700 hidden">
+                <h2 class="text-2xl font-bold mb-6 text-center">Análise da Redação</h2>
+
+                <div class="text-center mb-8">
+                    <p class="text-gray-400">Nota Final</p>
+                    <p id="score" class="text-6xl font-extrabold text-purple-400">---</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-blue-400">Análise por Competência</h3>
+                        <div id="competencies-details" class="text-gray-300 text-sm space-y-2">Aguardando análise...</div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-red-400">Erros Ortográficos e Gramaticais</h3>
+                        <p id="errors" class="text-gray-300 text-sm">Aguardando análise...</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-green-400">Sugestões de Melhoria</h3>
+                        <p id="suggestions" class="text-gray-300 text-sm">Aguardando análise...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const analyzeButton = document.getElementById('analyze-button');
+            const generateThemeButton = document.getElementById('generate-theme-button');
+            const resultsColumn = document.getElementById('results-column');
+            const essayText = document.getElementById('essay-text');
+            const themeInput = document.getElementById('theme-input');
+            const scoreEl = document.getElementById('score');
+            const errorsEl = document.getElementById('errors');
+            const suggestionsEl = document.getElementById('suggestions');
+            const competenciesEl = document.getElementById('competencies-details');
+
+            const apiKey = "AIzaSyDhjnPETwAm8cOtmN3IgjGeOLOx0kxn6y0"; // API Key adicionada
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const toggleLoader = (button, show) => {
+                const text = button.querySelector('.button-text');
+                const loader = button.querySelector('.loader');
+                if (show) {
+                    text.classList.add('hidden');
+                    loader.classList.remove('hidden');
+                    button.disabled = true;
+                } else {
+                    text.classList.remove('hidden');
+                    loader.classList.add('hidden');
+                    button.disabled = false;
+                }
+            };
+
+            async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(url, options);
+                        if (!response.ok) {
+                            if (response.status >= 500) { 
+                                throw new Error(`Server error: ${response.status}`);
+                            } else { 
+                                const errorBody = await response.text();
+                                throw new Error(`Client error: ${response.status} - ${errorBody}`);
+                            }
+                        }
+                        return response.json();
+                    } catch (error) {
+                        if (i === retries - 1) throw error;
+                        await new Promise(res => setTimeout(res, delay * Math.pow(2, i)));
+                    }
+                }
+            }
+
+            generateThemeButton.addEventListener('click', async () => {
+                toggleLoader(generateThemeButton, true);
+                themeInput.value = 'Gerando tema...';
+                
+                try {
+                    const prompt = "Gere um tema de redação relevante e atual para vestibulares ou concursos públicos no Brasil. O tema deve ser uma frase concisa. Retorne a sua resposta EXATAMENTE no seguinte formato JSON: {\"theme\": \"<o tema da redação>\", \"source\": \"<nome do concurso/vestibular, ex: ENEM 2023>\"}";
+                    const payload = {
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { responseMimeType: "application/json" }
+                    };
+                    
+                    const result = await fetchWithRetry(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (result.candidates && result.candidates[0].content.parts[0].text) {
+                        const jsonString = result.candidates[0].content.parts[0].text;
+                        const generatedTheme = JSON.parse(jsonString);
+                        themeInput.value = `${generatedTheme.theme} (${generatedTheme.source})`;
+                    } else {
+                        throw new Error("Resposta da IA em formato inesperado.");
+                    }
+                } catch (error) {
+                    themeInput.value = 'Erro ao gerar tema. Tente novamente.';
+                    console.error("Erro ao gerar tema:", error);
+                } finally {
+                    toggleLoader(generateThemeButton, false);
+                }
+            });
+
+            // Analisar Redação com IA
+            analyzeButton.addEventListener('click', async () => {
+                const essay = essayText.value;
+                const theme = themeInput.value;
+
+                if (essay.trim().length < 50) {
+                    alert("Por favor, escreva uma redação com pelo menos 50 caracteres.");
+                    return;
+                }
+
+                toggleLoader(analyzeButton, true);
+                resultsColumn.classList.remove('hidden');
+                scoreEl.textContent = '...';
+                errorsEl.textContent = 'Analisando...';
+                suggestionsEl.textContent = 'Analisando...';
+                competenciesEl.innerHTML = 'Analisando...';
+
+                try {
+                    const prompt = `
+                        Você é um membro de uma banca de correção de redações de alto nível, com conhecimento profundo dos critérios de avaliação dos principais vestibulares e concursos do Brasil (ENEM, FUVEST, VUNESP, FGV, Cespe/Cebraspe).
+                        Analise a seguinte redação com base no tema: "${theme}".
+                        Forneça uma análise crítica, detalhada e construtiva.
+                        Retorne a sua análise EXATAMENTE no seguinte formato JSON, sem nenhum texto adicional antes ou depois do JSON:
+                        {
+                          "score": <nota inteira de 0 a 1000>,
+                          "competencies": {
+                            "c1": "<Análise e nota (0-200) para Competência 1: Domínio da norma culta.>",
+                            "c2": "<Análise e nota (0-200) para Competência 2: Compreensão da proposta e repertório.>",
+                            "c3": "<Análise e nota (0-200) para Competência 3: Argumentação e organização.>",
+                            "c4": "<Análise e nota (0-200) para Competência 4: Coesão e coerência.>",
+                            "c5": "<Análise e nota (0-200) para Competência 5: Proposta de intervenção.>"
+                          },
+                          "errors": "<Liste os principais desvios gramaticais e ortográficos, apontando o parágrafo do erro e a correção sugerida.>",
+                          "suggestions": "<Dê sugestões estratégicas para melhorar a coesão, a força dos argumentos e o uso de repertório, citando exemplos do próprio texto do usuário.>"
+                        }
+
+                        Redação para análise:
+                        "${essay}"
+                    `;
+                    
+                    const payload = { 
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { responseMimeType: "application/json" }
+                    };
+
+                    const result = await fetchWithRetry(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (result.candidates && result.candidates[0].content.parts[0].text) {
+                        const jsonString = result.candidates[0].content.parts[0].text;
+                        const analysis = JSON.parse(jsonString);
+
+                        scoreEl.textContent = analysis.score;
+                        errorsEl.textContent = analysis.errors;
+                        suggestionsEl.textContent = analysis.suggestions;
+                        
+                        let competenciesHTML = '<ul class="space-y-1 list-disc list-inside">';
+                        for (const [key, value] of Object.entries(analysis.competencies)) {
+                            competenciesHTML += `<li><strong>Competência ${key.slice(1)}:</strong> ${value}</li>`;
+                        }
+                        competenciesHTML += '</ul>';
+                        competenciesEl.innerHTML = competenciesHTML;
+                    } else {
+                         throw new Error("Resposta da IA em formato inesperado.");
+                    }
+
+                } catch (error) {
+                    scoreEl.textContent = 'Erro';
+                    errorsEl.textContent = 'Não foi possível analisar a redação. Verifique o console para mais detalhes.';
+                    suggestionsEl.textContent = '';
+                    competenciesEl.innerHTML = '';
+                    console.error("Erro ao analisar redação:", error);
+                } finally {
+                    toggleLoader(analyzeButton, false);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
