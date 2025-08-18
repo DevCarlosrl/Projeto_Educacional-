@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redação</title>
+    <title>Redação - Lab.IA</title>
     
+    <!-- Favicon com o logo do site -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='p1' x1='50' y1='0' x2='50' y2='100' gradientUnits='userSpaceOnUse'><stop stop-color='%23A855F7'/><stop offset='1' stop-color='%236366F1'/></linearGradient><radialGradient id='p2' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(50 50) rotate(90) scale(25)'><stop stop-color='white'/><stop offset='1' stop-color='white' stop-opacity='0'/></radialGradient></defs><path d='M50 0C77.6 0 100 22.4 100 50S77.6 100 50 100 0 77.6 0 50 22.4 0 50 0Z' fill='url(%23p1)'/><path d='M62.5 25C62.5 34.4 54.4 42.5 45 42.5S27.5 34.4 27.5 25 35.6 7.5 45 7.5 62.5 15.6 62.5 25Z' fill='%233B82F6'/><path d='M75 50c0 13.8-11.2 25-25 25S25 63.8 25 50s11.2-25 25-25 25 11.2 25 25Z' fill='url(%23p2)' fill-opacity='0.5'/></svg>">
 
-
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,27 +19,29 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            /* Gradiente de fundo baseado na imagem */
             background-color: #0c0a09;
             background-image: linear-gradient(to right, #0c0a09, #240b36, #4c1d95);
         }
-
+        /* Pequeno ajuste para a transição suave do menu móvel */
         #mobile-menu {
             transition: transform 0.3s ease-in-out;
         }
+        /* Estilo para a aba ativa no submenu */
         .tab-active {
-            border-color: #A855F7;
+            border-color: #A855F7; /* Cor roxa para a borda */
             color: #ffffff;
             border-bottom-width: 3px;
         }
-
+        /* Estilo para o botão do menu principal ativo */
         .nav-active {
             color: #A855F7;
         }
-
+        /* Estilo para a área de texto da redação */
         #essay-text {
             resize: vertical;
         }
-
+        /* Animação de carregamento */
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #A855F7;
@@ -58,6 +61,7 @@
     <header class="bg-black bg-opacity-50 backdrop-blur-sm text-white sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
                 <a href="../public/index.html" class="flex items-center space-x-2">
                     <svg class="h-8 w-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0Z" fill="url(#paint0_linear_101_2)"/>
@@ -81,18 +85,20 @@
                 <nav class="hidden lg:flex items-center space-x-8">
                     <a href="../public/index.html" class="hover:text-purple-400 transition-colors">Início</a>
                     
+                    <!-- Botão único para abrir o mega menu -->
                     <button class="flex items-center hover:text-purple-400 transition-colors dropdown-toggle">
                         <span>Conteudo</span>
                         <svg class="ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                     
-                    <a href="../pages/redacao.html" class="text-purple-400 font-semibold transition-colors">Redação</a>
+                    <a href="#" class="text-purple-400 font-semibold transition-colors">Redação</a>
 
-                    <a href="#" class="hover:text-purple-400 transition-colors">Contato</a>
+                    <a href="../pages/contato.html" class="hover:text-purple-400 transition-colors">Contato</a>
                 </nav>
 
+                <!-- Ícones e Botão (Desktop) -->
                 <div class="hidden lg:flex items-center space-x-5">
-
+                    <!-- Container da Busca Funcional -->
                     <div id="search-container" class="relative flex items-center">
                         <input id="search-input" type="text" placeholder="Pesquisar..." class="absolute right-full w-0 bg-gray-700 text-white rounded-full py-1 transition-all duration-300 opacity-0 focus:outline-none focus:ring-2 focus:ring-purple-500 mr-2">
                         <button id="search-button" class="hover:text-purple-400 transition-colors z-10">
@@ -101,16 +107,132 @@
                     </div>
 
                     <div class="w-px h-6 bg-gray-600"></div>
-                    <a href="../pages/login.html" class="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
+                    <a href="login.html" class="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-6 py-2 rounded-full transition-all duration-300">
                         Login
                     </a>
                 </div>
 
-
+                <!-- Botão do Menu Móvel -->
                 <div class="lg:hidden">
                     <button id="mobile-menu-button">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Painel do Mega Menu Único -->
+<div id="mega-menu" class="absolute left-0 right-0 mt-2 bg-gray-800 rounded-md shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+            <div class="container mx-auto px-6 py-8">
+                <!-- Abas de Navegação -->
+                <div class="flex border-b border-gray-700 mb-6">
+                    <button class="tab-button py-2 px-4 border-b-2 border-transparent text-gray-400 hover:text-white" data-tab="eags">Eags</button>
+                    <button class="tab-button py-2 px-4 border-b-2 border-transparent text-gray-400 hover:text-white" data-tab="cap-pd">Cap-PD</button>
+                    <button class="tab-button py-2 px-4 border-b-2 border-transparent text-gray-400 hover:text-white" data-tab="materias">Matérias</button>
+                </div>
+                <!-- Conteúdo das Abas -->
+                <div id="tab-content">
+                    <!-- Conteúdo Eags -->
+                    <div id="eags-content" class="tab-pane hidden">
+                        <div class="grid grid-cols-4 gap-x-8 gap-y-6">
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Lógica & Linguagens</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Algoritmos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">PHP</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Java 7/8</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Orientação a Objetos</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Sistemas Operacionais</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Admin. LINUX</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Processos e Threads</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Gerência de Memória</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Virtualização e Nuvem</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Redes e Segurança</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Modelo de Referência</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Camadas de Rede</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Criptografia</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Malware e Ataques</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Dados e Hardware</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">MySQL / PostgreSQL</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Linguagem SQL</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Arquitetura PC</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Manutenção</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Conteúdo Cap-PD -->
+                    <div id="cap-pd-content" class="tab-pane hidden">
+                        <div class="grid grid-cols-4 gap-x-8 gap-y-6">
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Organização de Computadores</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Conceitos Básicos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Processadores</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Memórias</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Sistemas de Numeração</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Sistemas Operacionais</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Gerência de Processos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Gerência de Memória</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Sistemas de Arquivos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Linux</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Redes e Segurança</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Modelo OSI/TCP-IP</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Equipamentos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Segurança de Redes</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Criptografia</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase text-gray-400 mb-4">Programação e Dados</h3>
+                                <ul class="space-y-2">
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Algoritmos</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">Estruturas de Dados</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">POO e Java</a></li>
+                                    <li><a href="#" class="block text-sm text-gray-300 hover:text-purple-400 whitespace-nowrap">SQL e BDs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Conteúdo Matérias -->
+                    <div id="materias-content" class="tab-pane hidden">
+                        <p class="text-center text-gray-400">Conteúdo geral de matérias será exibido aqui.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painel do Menu Móvel -->
+        <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-gray-900 transform -translate-x-full">
+            <div class="p-5">
+                <a href="index.html" class="block py-2 px-4 text-lg hover:bg-purple-600 rounded">Início</a>
+                <a href="#" class="block py-2 px-4 text-lg hover:bg-purple-600 rounded">Conteudo</a>
+                <a href="redacao.html" class="block py-2 px-4 text-lg hover:bg-purple-600 rounded">Redação</a>
+                <a href="#" class="block py-2 px-4 text-lg hover:bg-purple-600 rounded">Contato</a>
+                <div class="mt-4 border-t border-gray-700 pt-4">
+                    <a href="login.html" class="w-full text-center block bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300">
+                        Login
+                    </a>
                 </div>
             </div>
         </div>
@@ -122,7 +244,9 @@
             <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-300">Escreva a sua redação, escolha um tema e receba uma análise completa com nota, correções e sugestões de melhoria.</p>
         </div>
 
+        <!-- Container Centralizado para a Interface -->
         <div class="max-w-4xl mx-auto">
+            <!-- Coluna do Editor -->
             <div class="bg-gray-800 bg-opacity-40 p-8 rounded-2xl border border-gray-700 mb-8">
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
                     <input id="theme-input" class="w-full sm:w-1/2 bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Insira um tema ou gere um novo">
@@ -138,14 +262,17 @@
                 <textarea id="essay-text" class="w-full h-96 bg-gray-900 bg-opacity-50 border border-gray-600 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Comece a escrever a sua redação aqui..."></textarea>
             </div>
 
+            <!-- Coluna de Resultados -->
             <div id="results-column" class="bg-gray-800 bg-opacity-40 p-8 rounded-2xl border border-gray-700 hidden">
                 <h2 class="text-2xl font-bold mb-6 text-center">Análise da Redação</h2>
-
+                
+                <!-- Nota -->
                 <div class="text-center mb-8">
                     <p class="text-gray-400">Nota Final</p>
                     <p id="score" class="text-6xl font-extrabold text-purple-400">---</p>
                 </div>
 
+                <!-- Detalhes da Análise -->
                 <div class="space-y-6">
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-blue-400">Análise por Competência</h3>
@@ -166,6 +293,75 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const megaMenu = document.getElementById('mega-menu');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            // Função para mostrar uma aba específica
+            function showTab(targetTab) {
+                tabPanes.forEach(pane => pane.classList.add('hidden'));
+                document.getElementById(`${targetTab}-content`).classList.remove('hidden');
+
+                tabButtons.forEach(button => {
+                    button.classList.remove('tab-active');
+                    if (button.dataset.tab === targetTab) {
+                        button.classList.add('tab-active');
+                    }
+                });
+            }
+
+            // Função para fechar o menu
+            function closeMenu() {
+                megaMenu.classList.remove('opacity-100');
+                megaMenu.classList.add('opacity-0', 'pointer-events-none');
+                dropdownToggle.classList.remove('nav-active');
+            }
+
+            // Abrir o mega menu
+            dropdownToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isVisible = megaMenu.classList.contains('opacity-100');
+                
+                if (isVisible) {
+                    closeMenu();
+                } else {
+                    showTab('eags'); // Abre na primeira aba por padrão
+                    megaMenu.classList.add('opacity-100');
+                    megaMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    dropdownToggle.classList.add('nav-active');
+                }
+            });
+
+            // Trocar de aba dentro do mega menu
+            tabButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    showTab(button.dataset.tab);
+                });
+            });
+            
+            // Fechar o mega menu ao clicar fora
+            window.addEventListener('click', (event) => {
+                const header = document.querySelector('header');
+                if (!header.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Lógica do menu móvel
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('-translate-x-full');
+            });
+
+
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
             const analyzeButton = document.getElementById('analyze-button');
             const generateThemeButton = document.getElementById('generate-theme-button');
             const resultsColumn = document.getElementById('results-column');
@@ -175,10 +371,19 @@
             const errorsEl = document.getElementById('errors');
             const suggestionsEl = document.getElementById('suggestions');
             const competenciesEl = document.getElementById('competencies-details');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const megaMenu = document.getElementById('mega-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const searchButton = document.getElementById('search-button');
+            const searchInput = document.getElementById('search-input');
+            const searchContainer = document.getElementById('search-container');
 
-            const apiKey = "AIzaSyDhjnPETwAm8cOtmN3IgjGeOLOx0kxn6y0"; // API Key adicionada
+
+            const apiKey = "AIzaSyDhjnPETwAm8cOtmN3IgjGeOLOx0kxn6y0";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
+            // Função para mostrar/esconder o loader
             const toggleLoader = (button, show) => {
                 const text = button.querySelector('.button-text');
                 const loader = button.querySelector('.loader');
@@ -193,14 +398,15 @@
                 }
             };
 
+            // Função para chamar a API com retentativas (exponential backoff)
             async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
                 for (let i = 0; i < retries; i++) {
                     try {
                         const response = await fetch(url, options);
                         if (!response.ok) {
-                            if (response.status >= 500) { 
+                            if (response.status >= 500) { // Erros de servidor, vale a pena tentar de novo
                                 throw new Error(`Server error: ${response.status}`);
-                            } else { 
+                            } else { // Erros do cliente (ex: 400), não adianta tentar de novo
                                 const errorBody = await response.text();
                                 throw new Error(`Client error: ${response.status} - ${errorBody}`);
                             }
@@ -213,6 +419,7 @@
                 }
             }
 
+            // Gerar Tema com IA
             generateThemeButton.addEventListener('click', async () => {
                 toggleLoader(generateThemeButton, true);
                 themeInput.value = 'Gerando tema...';
@@ -322,6 +529,22 @@
                     console.error("Erro ao analisar redação:", error);
                 } finally {
                     toggleLoader(analyzeButton, false);
+                }
+            });
+            
+            // Lógica do menu móvel e da busca
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('-translate-x-full');
+            });
+
+            searchButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                searchInput.classList.toggle('w-0');
+                searchInput.classList.toggle('w-56');
+                searchInput.classList.toggle('opacity-0');
+                searchInput.classList.toggle('px-4');
+                if (searchInput.classList.contains('w-56')) {
+                    searchInput.focus();
                 }
             });
         });
